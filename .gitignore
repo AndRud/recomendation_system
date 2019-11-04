@@ -1,0 +1,23 @@
+# Gradle
+.gradle/**
+build/**
+out/**
+
+# Emacs
+*~
+
+# IntelliJ
+*.ipr
+*.iws
+*.iml
+
+# IntelliJ Gradle Plugin
+/gradlew
+/gradlew.bat
+/gradle/
+
+# idea
+.idea/**
+
+# pycache
+__pycache__/**

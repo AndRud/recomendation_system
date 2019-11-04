@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Prediction</title>
+</head>
+<style>
+	body{
+		background: #efefef;
+		color:#555;
+	}
+	.main h2{
+		font-size:40px;
+		text-align: center;
+	}
+	.main .ml-container{
+		background:#3AAACF;
+		width: 420px;
+		margin: 0 auto;
+		border-radius: 3px;
+		padding: 30px 20px;
+		display: block;
+	}
+	.ml-container ul{
+		padding-left: 20px;
+	}
+	.ml-container .results{
+		text-align: left;
+		font-size: 16px;
+		line-height: 1.5;
+		color: #fff;
+	}
+
+</style>
+<body>
+	<div class="main">
+		<h2>Predicted films for {{ user }}</h2>
+		<div class="ml-container">
+			<ul class="results">
+				{% for film in films_prediction %}
+				<li> {{ film }} </li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
