@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<style>
+	body{
+		background: #efefef;
+		color:#555;
+	}
+	.main h2{
+		font-size:40px;
+		text-align: center;
+	}
+	.main label{
+		text-align: left;
+		color: #ffffff;
+		font-size: 18px;
+		display: inline-block;
+		margin-bottom: 5px;
+	}
+	.main .ml-container{
+		background:#3AAACF;
+		width: 420px;
+		margin: 0 auto;
+		border-radius: 3px;
+		padding: 30px 20px;
+		display: block;
+	}
+	.style-block {
+		display: block;
+		width: 100%;
+		height: 40px;
+		font-size: 16px;
+		line-height: 1.5;
+		color: #495057;
+		background-color: #fff;
+		background-clip: padding-box;
+		border: 0;
+		border-radius: 0;
+		margin-bottom: 20px;
+	}
+	.style-block-number{
+		width: 400px;
+		padding: 0 5px 0 15px;
+	}
+	input[type=number]::-webkit-inner-spin-button {
+		opacity: 1;
+	}
+	.btn-info{
+		width: 100px;
+		height: 40px;
+		background: rgba(6, 10, 10, 0.3686274509803922);
+		border: 0;
+		border-radius: 0;
+		font-size: 15px;
+		color: #ffffff;
+		cursor: pointer;
+	}
+	.block-btn{
+		margin: 0 auto;
+		display: block;
+		text-align: center;
+	}
+	.btn-info:hover{
+		color: #555;
+		background: #ffffff;
+	}
+
+</style>
+
+<body>
+
+<div class="main">
+	<h2>Recommendation system</h2>
+
+	<div class="ml-container">
+		<form action="{{ url_for('predict')}}" method="POST">
+			<div class="block-select">
+				<label for="SelectUser">Select user:</label>
+				<select class="style-block" id="SelectUser" name="user_id">
+					{% for i in range(1, users|length - 1) %}
+					<option value='{{ i }}'> {{ users['First Name'][i] +  ' ' + users['Last Name'][i] }}</option>
+					{% endfor %}
+				</select>
+			</div>
+
+			<div class="quantity">
+				<label for="FilmCount">Films count:</label>
+				<input class="style-block style-block-number" type="number" name="films_count" id="FilmCount" placeholder="0" value="5">
+			</div>
+			<div class="block-btn">
+				<input type="submit" class="btn-info" value="PREDICT">
+			</div>
+
+		</form>
+	</div>
+
+</div>
+
+</body>
+</html>
