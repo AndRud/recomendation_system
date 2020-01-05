@@ -75,7 +75,7 @@
 	<h2>Recommendation system</h2>
 
 	<div class="ml-container">
-		<form action="{{ url_for('predict')}}" method="POST">
+		<form action="{{ url_for('pred')}}" method="POST">
 			<div class="block-select">
 				<label for="SelectUser">Select user:</label>
 				<select class="style-block" id="SelectUser" name="user_id">
@@ -90,7 +90,7 @@
 				<input class="style-block style-block-number" type="number" name="films_count" id="FilmCount" placeholder="0" value="5">
 			</div>
 			<div class="block-btn">
-				<input type="submit" class="btn-info" value="PREDICT">
+				<input type="submit" class="btn-info" value="pred">
 			</div>
 
 		</form>
